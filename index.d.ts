@@ -41,7 +41,7 @@ interface ComputedAsync {
    * values are passed to the callback as-is.
    *
    * ```js
-   * import { computedAsync } from 'nanostores'
+   * import { computedAsync } from '@nanostores/async'
    *
    * const $org = computedAsync($orgSlug, slug => {
    *   return fetchOrgBySlug(slug)
@@ -80,7 +80,7 @@ interface ComputedAsyncNoCascade {
    * handle loading, ready, and failed states of upstream stores.
    *
    * ```js
-   * import { computedAsync, computedAsyncNoCascade } from 'nanostores'
+   * import { computedAsync, computedAsyncNoCascade } from '@nanostores/async'
    *
    * const $org = computedAsync($orgSlug, slug => {
    *   return fetchOrgBySlug(slug)
