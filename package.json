@@ -9,36 +9,39 @@
     "state manager",
     "async"
   ],
-  "scripts": {
-    "test:lint": "prettier -c .",
-    "test:coverage": "pnpm bnt --coverage",
-    "test:types": "check-dts",
-    "test:size": "size-limit",
-    "test": "pnpm run /^test:/"
-  },
-  "authors": "Luiz Ferraz <luiz@lferraz.com>",
-  "license": "MIT",
   "repository": "nanostores/async",
-  "sideEffects": false,
-  "type": "module",
-  "types": "./index.d.ts",
-  "exports": {
-    ".": "./index.js",
-    "./package.json": "./package.json"
-  },
-  "engines": {
-    "node": "^20.0.0 || >=22.0.0"
-  },
   "funding": [
     {
       "type": "github",
       "url": "https://github.com/sponsors/ai"
     }
   ],
-  "peerDependencies": {
-    "nanostores": "^1"
+  "license": "MIT",
+  "sideEffects": false,
+  "type": "module",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
+  "types": "./index.d.ts",
+  "scripts": {
+    "test": "pnpm run /^test:/",
+    "test:coverage": "pnpm bnt --coverage",
+    "test:lint": "prettier -c .",
+    "test:size": "size-limit",
+    "test:types": "check-dts"
+  },
+  "prettier": {
+    "arrowParens": "avoid",
+    "jsxSingleQuote": false,
+    "quoteProps": "consistent",
+    "semi": false,
+    "singleQuote": true,
+    "trailingComma": "none"
   },
   "devDependencies": {
+    "@changesets/changelog-github": "^0.6.0",
+    "@changesets/cli": "^2.30.0",
     "@sinonjs/fake-timers": "^15.1.1",
     "@size-limit/preset-small-lib": "^12.0.1",
     "@types/node": "^25.3.5",
@@ -50,13 +53,15 @@
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   },
-  "prettier": {
-    "arrowParens": "avoid",
-    "jsxSingleQuote": false,
-    "quoteProps": "consistent",
-    "semi": false,
-    "singleQuote": true,
-    "trailingComma": "none"
+  "peerDependencies": {
+    "nanostores": "^1"
+  },
+  "engines": {
+    "node": "^20.0.0 || >=22.0.0"
+  },
+  "authors": "Luiz Ferraz <luiz@lferraz.com>",
+  "clean-publish": {
+    "cleanDocs": true
   },
   "size-limit": [
     {
@@ -66,8 +71,5 @@
       },
       "limit": "418 B"
     }
-  ],
-  "clean-publish": {
-    "cleanDocs": true
-  }
+  ]
 }
